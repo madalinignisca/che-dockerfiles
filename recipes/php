@@ -1,0 +1,29 @@
+FROM registry.centos.org/che-stacks/centos-stack-base
+
+MAINTAINER Madalin Ignisca <madalin.ignisca@yahoo.com>
+
+EXPOSE 3306 8080
+
+LABEL che:server:8080:ref=php che:server:8080:protocol=http
+
+RUN sudo yum update -y && \
+    sudo yum localinstall http://yum.mariadb.org/10.2/centos7-amd64/rpms/MariaDB-10.2.13-centos73-x86_64-compat.rpm \
+      http://yum.mariadb.org/10.2/centos7-amd64/rpms/MariaDB-10.2.13-centos73-x86_64-common.rpm \
+      http://yum.mariadb.org/10.2/centos7-amd64/rpms/MariaDB-10.2.13-centos73-x86_64-client.rpm \
+      http://yum.mariadb.org/10.2/centos7-amd64/rpms/MariaDB-10.2.13-centos73-x86_64-server.rpm && \
+    sudo yum -y localinstall https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm \
+      https://rpms.remirepo.net/enterprise/remi-release-7.rpm && \
+    sudo yum-config-manager --enable remi-php72 && \
+    sudo yum -y install composer \
+      php-bcmath \
+      php-cli \
+      php-gd \
+      php-intl \
+      php-json \
+      php-mbstring \
+      php-mysqlnd \
+      php-opcache \
+      php-pdo \
+      php-twig \
+      php-xml && \
+    sudo yum -y clean all
