@@ -22,7 +22,7 @@ RUN sudo yum update -y && \
       php-opcache \
       php-pdo \
       php-pgsql \
-      php-snuffleupagus \ # really cool, ain't it?
+      php-snuffleupagus \
       php-sodium \
       php-twig \
       php-xml && \
