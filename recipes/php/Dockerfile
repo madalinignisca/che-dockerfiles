@@ -8,10 +8,7 @@ LABEL che:server:8080:ref=php che:server:8080:protocol=http
 
 COPY mariadb.repo /etc/yum.repos.d/mariadb.repo
 
-ADD https://rpm.nodesource.com/setup_8.x /tmp/setupnode.sh
-
 RUN sudo yum update -y && \
-    sudo bash /tmp/setupnode.sh \
     sudo yum -y localinstall https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm \
       https://rpms.remirepo.net/enterprise/remi-release-7.rpm && \
     sudo yum-config-manager --enable remi-php72 && \
@@ -19,7 +16,6 @@ RUN sudo yum update -y && \
       gcc-c++ make \
       MariaDB-client \
       nano \
-      nodejs \
       php-bcmath \
       php-cli \
       php-gd \
