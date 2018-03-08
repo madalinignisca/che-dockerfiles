@@ -7,6 +7,7 @@ EXPOSE 8080
 LABEL che:server:8080:ref=php che:server:8080:protocol=http
 
 COPY mariadb.repo /etc/yum.repos.d/mariadb.repo
+COPY my.cnf /etc/my.cnf
 
 RUN sudo yum update -y && \
     sudo yum -y localinstall https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm \
