@@ -13,7 +13,6 @@ RUN sudo yum update -y && \
       https://rpms.remirepo.net/enterprise/remi-release-7.rpm && \
     sudo yum-config-manager --enable remi-php72 && \
     sudo yum -y install composer \
-      gcc-c++ make \
       MariaDB-client \
       nano \
       php-bcmath \
