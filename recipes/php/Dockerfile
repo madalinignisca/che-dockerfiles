@@ -38,6 +38,6 @@ RUN sudo yum update -y && \
     curl https://drupalconsole.com/installer -L -o drupal.phar \
     mv drupal.phar /usr/local/bin/drupal \
     chmod +x /usr/local/bin/drupal \
-    curl -OL https://github.com/drush-ops/drush-launcher/releases/download/0.6.0/drush.phar \
+    curl -L https://github.com/drush-ops/drush-launcher/releases/download/0.6.0/drush.phar \
     chmod +x drush.phar \
     sudo mv drush.phar /usr/local/bin/drush
