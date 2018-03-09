@@ -36,6 +36,6 @@ RUN sudo yum update -y && \
       php-twig \
       php-xml && \
     sudo yum -y clean all && \
-    chmod +x /usr/local/bin/wp && \
-    chmod +x /usr/local/bin/drupal && \
-    chmod +x /usr/local/bin/drush
+    sudo chmod +x /usr/local/bin/wp && \
+    sudo chmod +x /usr/local/bin/drupal && \
+    sudo chmod +x /usr/local/bin/drush
