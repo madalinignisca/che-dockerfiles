@@ -14,13 +14,16 @@ ADD https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar /u
 ADD https://drupalconsole.com/installer /usr/local/bin/drupal
 ADD https://github.com/drush-ops/drush-launcher/releases/download/0.6.0/drush.phar /usr/local/bin/drush
 
-RUN sudo yum update -y && \
+RUN curl -sL https://rpm.nodesource.com/setup_8.x | sudo bash - && \
+    sudo yum update -y && \
     sudo yum -y localinstall https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm \
       https://rpms.remirepo.net/enterprise/remi-release-7.rpm && \
     sudo yum-config-manager --enable remi-php72 && \
     sudo yum -y install \
+      gcc-c++ make \
       MariaDB-client \
       nano \
+      nodejs \
       php-bcmath \
       php-cli \
       php-gd \
