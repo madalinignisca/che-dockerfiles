@@ -8,7 +8,7 @@ LABEL che:server:8080:ref=php che:server:8080:protocol=http
 
 COPY mariadb.repo /etc/yum.repos.d/mariadb.repo
 
-ADD https://getcomposer.org/composer.phar /usr/local/bin/composer
+ADD https://getcomposer.org/download/1.6.3/composer.phar /usr/local/bin/composer
 ADD https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar /usr/local/bin/wp
 ADD https://drupalconsole.com/installer /usr/local/bin/drupal
 ADD https://github.com/drush-ops/drush-launcher/releases/download/0.6.0/drush.phar /usr/local/bin/drush
