@@ -45,7 +45,7 @@ RUN curl -sL https://rpm.nodesource.com/setup_8.x | sudo bash - && \
     cd /tmp && \
     sudo curl -L -o zend-server-php-7.2-common.x86_64.rpm http://repos.zend.com/zend-server/early-access/2018.1/lin/rpm_apache2.4/x86_64/zend-server-php-7.2-common-9.2.0-427.x86_64.rpm && \
     rpm2cpio ./zend-server-php-7.2-common.x86_64.rpm | cpio -iv --to-stdout ./usr/local/zend/lib/debugger/php-7.2.x/ZendDebugger.so > ZendDebugger.so && \
-    rm zend-server-php-7.2-common.x86_64.rpm && \
+    sudo rm zend-server-php-7.2-common.x86_64.rpm && \
     sudo mv ZendDebugger.so /usr/lib64/php/modules/ && \
     sudo chmod 755 /usr/lib64/php/modules/ZendDebugger.so
 
